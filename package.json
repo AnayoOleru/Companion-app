@@ -1,0 +1,89 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "private": true,
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject",
+    "test": "jest --coverage -u",
+    "lint": "eslint .",
+    "prettier": "eslint . --fix",
+    "debug": "rndebugger-open --open --expo && expo start"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^10.0.3",
+    "axios": "0.19.0",
+    "color": "3.1.2",
+    "expect": "^24.9.0",
+    "expo": "33.0.7",
+    "expo-app-auth": "^5.0.1",
+    "expo-asset": "^5.0.1",
+    "expo-constants": "^6.0.0",
+    "expo-font": "~5.0.1",
+    "jest-config": "^24.8.0",
+    "jwt-decode": "^2.2.0",
+    "lodash": "4.17.14",
+    "lottie-react-native": "^2.6.1",
+    "moment": "2.24.0",
+    "moment-timezone": "^0.5.26",
+    "prop-types": "15.7.2",
+    "react": "16.8.3",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
+    "react-native-calendars": "1.196.0",
+    "react-native-dialogflow-text": "0.0.1",
+    "react-native-dotenv": "0.2.0",
+    "react-native-easy-toast": "1.2.0",
+    "react-native-elements": "^1.1.0",
+    "react-native-gifted-chat": "0.9.4",
+    "react-native-gifted-messenger": "0.1.4",
+    "react-native-keyboard-spacer": "0.4.1",
+    "react-native-modal": "^11.3.0",
+    "react-native-safe-modules": "^1.0.0",
+    "react-native-size-matters": "0.2.1",
+    "react-native-swiper": "1.5.14",
+    "react-native-web": "^0.11.4",
+    "react-navigation": "3.11.0",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.4",
+    "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.3",
+    "redux-persist": "5.10.0",
+    "redux-thunk": "^2.3.0",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "babel-preset-expo": "^5.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.3.5",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-react-native-prettier": "^1.0.1",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.13.0",
+    "husky": "^3.0.0",
+    "jest": "^24.8.0",
+    "jest-expo": "^33.0.2",
+    "jest-fetch-mock": "^2.1.2",
+    "lint-staged": "^9.2.0",
+    "moxios": "^0.4.0",
+    "react-dom": "^16.8.6",
+    "react-native-debugger-open": "^0.3.19",
+    "react-test-renderer": "^16.8.6"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

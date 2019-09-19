@@ -1,0 +1,137 @@
+#!groovy​
+
+pipeline {
+    agent {
+        kubernetes {
+            label 'converge-companion'
+            defaultContainer 'jnlp'
+            yaml """
+            apiVersion: v1
+            kind: Pod
+            metadata:
+                name: converge-companion-pod
+            spec:
+              containers:
+                - name: converge-companion
+                  image: node:10.16
+                  command:
+                  - cat
+                  tty: true
+                  env:
+                    - name: DOCKER_HOST
+                      value: tcp://localhost:2375
+                  securityContext:
+                      privileged: true
+              volumes:
+                - name: docker-graph-storage
+                  emptyDir: {}
+            """
+        }
+    }
+
+    stages {
+        stage('Setup environment') {
+            steps {
+                container('converge-companion') {
+                    withCredentials([
+                      file(credentialsId: 'converge-companion-env', variable: 'COMPANION_ENV')
+                    ]) {
+                      load "$COMPANION_ENV"
+                    }
+                    sh script: "chmod +x ${WORKSPACE}/jenkins/scripts/*.sh", label: "Make scripts executable"
+                    sh script: "yarn install && yarn global add expo-cli", label: "Install dependencies"
+                    sh script: "curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ${WORKSPACE}/cc-test-reporter", label: "Download codeclimate test reporter"
+                    sh script: "chmod +x ${WORKSPACE}/cc-test-reporter", label: "Make reporter executable"
+                    sh script: "${WORKSPACE}/jenkins/scripts/generate_env_config.sh", label: "Generate environment variables"
+                    sh script: "${WORKSPACE}/jenkins/scripts/expo_login.sh", label: "Login to expo"
+                }
+            }
+          }
+        stage("Run checks"){
+            parallel{
+                stage("lint"){
+                    steps{
+                        container('converge-companion'){
+                            sh script: "yarn lint", label: "Run style checks (lint)"
+                        }
+                    }
+                    post{
+                        success{
+                          container('converge-companion'){
+                              sh script:"${WORKSPACE}/jenkins/scripts/slack_notify.sh success"
+                          }
+                        }
+                        failure{
+                          container('converge-companion'){
+                                sh script:"${WORKSPACE}/jenkins/scripts/slack_notify.sh fail"
+                            }
+                        }
+                    }
+                }
+                stage("test"){
+                    steps{
+                        container('converge-companion'){
+                              sh script: "yarn test", label: "Run tests"
+                          }
+                      }
+                    post{
+                        success{
+                            container('converge-companion'){
+                                sh script:"${WORKSPACE}/jenkins/scripts/slack_notify.sh success"
+                            }
+                        }
+                        failure{
+                            container('converge-companion'){
+                                sh script:"${WORKSPACE}/jenkins/scripts/slack_notify.sh fail"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        stage("Build application"){
+            when { anyOf { branch 'develop'; branch 'master'} }
+            parallel{
+                stage("iOS"){
+                    steps{
+                        container('converge-companion'){
+                            // sh script: "expo build:ios", label: "Build .ipa file"
+                            sh script: "echo 'IOS build'", label: "Testing"
+                        }
+                    }
+                    post{
+                        success{
+                            container('converge-companion'){
+                                sh script:"${WORKSPACE}/jenkins/scripts/slack_notify.sh success"
+                            }
+                        }
+                        failure{
+                            container('converge-companion'){
+                                sh script:"${WORKSPACE}/jenkins/scripts/slack_notify.sh fail"
+                            }
+                        }
+                    }
+                }
+                stage("android"){
+                    steps{
+                        container('converge-companion'){
+                            sh script: "echo 'Build for android'", label: "Build .apk file"
+                        }
+                    }
+                    post{
+                        success{
+                            container('converge-companion'){
+                                sh script:"${WORKSPACE}/jenkins/scripts/slack_notify.sh success"
+                            }
+                        }
+                        failure{
+                            container('converge-companion'){
+                                sh script:"${WORKSPACE}/jenkins/scripts/slack_notify.sh fail"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

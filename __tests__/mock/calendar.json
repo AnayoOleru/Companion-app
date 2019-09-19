@@ -1,0 +1,155 @@
+{
+  "kind": "calendar#events",
+  "etag": "\"*************\"",
+  "summary": "me@gmail.com",
+  "updated": "2019-06-28T07:38:23.592Z",
+  "timeZone": "Africa/Maputo",
+  "accessRole": "owner",
+  "defaultReminders": [
+    {
+      "method": "popup",
+      "minutes": 10
+    }
+  ],
+  "nextSyncToken": "some_token_here",
+  "items": [
+    {
+      "kind": "calendar#event",
+      "etag": "\"*********\"",
+      "id": "hjakdfh876876afdajfh",
+      "status": "cancelled",
+      "htmlLink": "*****************",
+      "created": "2019-05-15T14:55:59.000Z",
+      "updated": "2019-05-16T14:18:29.255Z",
+      "summary": "Metting",
+      "description": "Hello world",
+      "location": "https://onlinecall.com/j/160402801",
+      "creator": {
+        "email": "example@gmail.com"
+      },
+      "organizer": {
+        "email": "example2@gmail.com"
+      },
+      "start": {
+        "dateTime": "2019-06-05T16:00:00+02:00",
+        "timeZone": "Africa/SomeWhere"
+      },
+      "end": {
+        "dateTime": "2019-06-05T17:00:00+02:00",
+        "timeZone": "Africa/SomeWhere"
+      },
+      "recurrence": ["******************"],
+      "iCalUID": "**************",
+      "sequence": 2,
+      "attendees": [
+        {
+          "email": "me@gmail.com",
+          "self": true,
+          "responseStatus": "tentative"
+        }
+      ],
+      "guestsCanInviteOthers": false,
+      "guestsCanSeeOtherGuests": false,
+      "reminders": {
+        "useDefault": true
+      }
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"***********\"",
+      "id": "afhr80ocmc7nf6fktp7sef7b2o",
+      "status": "confirmed",
+      "htmlLink": "https://hello.com/index.html",
+      "created": "2018-07-05T12:10:20.000Z",
+      "updated": "2019-05-17T12:20:54.031Z",
+      "summary": "Meeting",
+      "description": "Hello world",
+      "location": "https://onlinecall.com/j/160402801",
+      "creator": {
+        "email": "example@gmail.com"
+      },
+      "organizer": {
+        "email": "example2@gmail.com"
+      },
+      "start": {
+        "dateTime": "2019-06-05T16:00:00+02:00",
+        "timeZone": "Africa/SomeWhere"
+      },
+      "end": {
+        "dateTime": "2019-06-05T17:00:00+02:00",
+        "timeZone": "Africa/SomeWhere"
+      },
+      "recurrence": ["*******"],
+      "iCalUID": "******************",
+      "sequence": 2,
+      "attendees": [
+        {
+          "email": "me@gmail.com",
+          "self": true,
+          "responseStatus": "tentative"
+        }
+      ],
+      "guestsCanInviteOthers": false,
+      "guestsCanSeeOtherGuests": false,
+      "reminders": {
+        "useDefault": true
+      }
+    }
+  ],
+  "events": {
+    "2019-06-05": [
+      {
+        "id": "hjakdfh876876afdajfh",
+        "sequence": 2,
+        "status": "cancelled",
+        "location": "https: //onlinecall.com/j/160402801",
+        "creator": {
+          "email": "example@gmail.com"
+        },
+        "organizer": {
+          "email": "example2@gmail.com"
+        },
+        "end": {
+          "dateTime": "2019-06-05T17:00:00+02:00",
+          "timeZone": "Africa/SomeWhere"
+        },
+        "start": {
+          "dateTime": "2019-06-05T16:00:00+02:00",
+          "timeZone": "Africa/SomeWhere"
+        },
+        "originalStartTime": "undefined",
+        "summary": "Metting",
+        "color": {
+          "event": "#00A89D",
+          "dot": "#00A89D"
+        }
+      },
+      {
+        "id": "afhr80ocmc7nf6fktp7sef7b2o",
+        "sequence": 2,
+        "status": "confirmed",
+        "location": "https: //onlinecall.com/j/160402801",
+        "creator": {
+          "email": "example@gmail.com"
+        },
+        "organizer": {
+          "email": "example2@gmail.com"
+        },
+        "end": {
+          "dateTime": "2019-06-05T17:00:00+02:00",
+          "timeZone": "Africa/SomeWhere"
+        },
+        "start": {
+          "dateTime": "2019-06-05T16:00:00+02:00",
+          "timeZone": "Africa/SomeWhere"
+        },
+        "originalStartTime": "undefined",
+        "summary": "Meeting",
+        "color": {
+          "event": "#00A89D",
+          "dot": "#00A89D"
+        }
+      }
+    ]
+  }
+}
