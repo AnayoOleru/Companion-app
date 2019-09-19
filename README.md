@@ -71,4 +71,4 @@ Ensure you have an emulator installed, the links below will help guide you throu
 
 ### Wiki
 
-Here's a link to our [wiki]() page.
+Here's a link to the [wiki]() page.
