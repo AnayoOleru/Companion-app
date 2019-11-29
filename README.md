@@ -2,7 +2,7 @@
 
 # Companion App
 
-> This is a mobile application that acts as your virtual buddy that allows you to book meeting rooms directly from your phone in any organizations meeting rooms.
+> This is a mobile application that acts as your virtual buddy that allows you to book any organizational meeting rooms directly from your phone.
 
 ## Product Road Map
 
