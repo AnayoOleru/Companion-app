@@ -123,7 +123,7 @@ describe('Add attendees to a meeting', () => {
 
 describe('test for dispatch actions', () => {
   const item = {
-    email: 'test@andela.com'
+    email: 'test@anayo.com'
   };
   test('should dispatch action', () => {
     const initialState = {
@@ -178,7 +178,7 @@ describe('The mapDispatchToProps function', () => {
   let dispatch;
   let dispatchProp;
   const item = {
-    email: 'test@andela.com'
+    email: 'test@test.com'
   };
   beforeEach(() => {
     dispatch = jest.fn(() => Promise.resolve());

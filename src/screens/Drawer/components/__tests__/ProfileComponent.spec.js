@@ -8,7 +8,6 @@ describe('ProfileComponent', () => {
       picture: 'http://link-to-image.com',
       lastName: 'lastname',
       firstName: 'firstname',
-      email: 'first.last@andela.com'
     }
   };
   const wrapper = shallow(<ProfileComponent {...props} />);

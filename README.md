@@ -25,8 +25,6 @@ To download NodeJS and Npm [click here](https://nodejs.org/en/download/). OR To 
 
 Creating a new file `.env` under root directory, and ensure you have all environment variables. The sample of `.env` can be found [here](.env.example).
 
-The environmental variables can be found [here](https://andela.slack.com/archives/GJZ2Z97UM/p1561993380003500?thread_ts=1561980575.000900&cid=GJZ2Z97UM)
-
 
 #### Flow
 

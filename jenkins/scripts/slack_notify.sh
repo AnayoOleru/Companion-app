@@ -9,7 +9,7 @@ IMAGE_TAG=$(echo $GIT_COMMIT | cut -c -7)
 #Replace the '/' in the branch name for branches with it for example
 # 'story/xxxx-191'
 REBUILD_BRANCH=$(echo $GIT_BRANCH | sed 's/\//%2F/g')
-REBUILD_URL="https://jenkins.andela.com/blue/organizations/jenkins/converge-companion-app/detail/${REBUILD_BRANCH}/${BUILD_NUMBER}/pipeline"
+REBUILD_URL="https://jenkins.com/blue/organizations/jenkins/converge-companion-app/detail/${REBUILD_BRANCH}/${BUILD_NUMBER}/pipeline"
 get_build_report() {
     # Report the status of builds
     if [ "$STAGE_NAME" == 'test' -a  "$STATUS" == 'success' ]; then
@@ -63,7 +63,7 @@ get_build_report() {
     fi
 
     # prepare template for slack messaging
-    COMMIT_LINK="https://github.com/andela/converge-companion-app/commit/${GIT_COMMIT}"
+    COMMIT_LINK="https://github.com/converge-companion-app/commit/${GIT_COMMIT}"
     # IMG_TAG="$(git rev-parse --short HEAD)"
     JENKINS_WORKFLOW_URL="${REBUILD_URL}"
     SLACK_TEXT_TITLE="Jenkins Build #$BUILD_NUMBER"
@@ -81,7 +81,7 @@ send_notification() {
             \"fallback\": \"Jenkins build notification\",
             \"color\": \"${COLOR}\",
             \"author_name\": \"Branch: $GIT_BRANCH by ${GIT_COMMITTER_NAME}\",
-            \"author_link\": \"https://github.com/andela/converge-companion-app/tree/${GIT_BRANCH}\",
+            \"author_link\": \"https://github.com/converge-companion-app/tree/${GIT_BRANCH}\",
             \"title\": \"${SLACK_TEXT_TITLE}\",
             \"title_link\": \"$JENKINS_WORKFLOW_URL\",
             \"text\": \"${SLACK_DEPLOYMENT_TEXT}\",

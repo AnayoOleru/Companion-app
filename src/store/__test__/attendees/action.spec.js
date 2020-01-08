@@ -6,8 +6,8 @@ import * as types from '../../attendees/types';
 const mockStore = configureStore([thunk]);
 let store;
 const item = {
-  email: 'alvin.mugambi@andela.com',
-  name: 'Alvin Mugambi',
+  email: 'test@test.com',
+  name: 'test',
   picture:
     'https://lh3.googleusercontent.com/-igciUdxZ4Tw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reMYlAe6d56yp86TiBYZ0Ja7cRk8A/s50/photo.jpg'
 };

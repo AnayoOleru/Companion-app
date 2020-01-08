@@ -74,7 +74,7 @@ describe('Async Thunk for Event', () => {
       }
     }));
     const store = mockStore({});
-    const attendees = ['test@andela.com'];
+    const attendees = ['test@test.com'];
     await store.dispatch(actions.sendEventToDialogFlow(attendees));
     const action = store.getActions();
     expect(action[0]).toEqual({ type: 'SEND_TO_DIALOGFLOW_REQUEST' });

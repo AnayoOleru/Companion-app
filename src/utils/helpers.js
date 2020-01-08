@@ -159,7 +159,7 @@ export const getCurrentTime = () => {
 };
 
 /**
- * Fetch user emails from the andela API.
+ * Fetch user emails from the API.
  * @param {keyWord} keyWord the keyword that helps identify a user.
  * @returns {text} the user email after successful fetch .
  */
@@ -169,7 +169,7 @@ export async function getUserEmail(keyWord) {
   if (text) {
     const token = await AsyncStorage.getItem('token');
     const attendeeData = await fetch(
-      `https://api-prod.andela.com/api/v1/users/basic?search=${text}`,
+      `https://api-prod.com/api/v1/users/basic?search=${text}`,
       {
         headers: { Authorization: `Bearer ${token}` }
       }

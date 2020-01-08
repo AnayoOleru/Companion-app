@@ -67,14 +67,14 @@ describe('Login Container', () => {
     componentWrapper.setProps({
       auth: {
         error: {
-          message: 'Please make sure to use a valid Andela email'
+          message: 'Please make sure to use a valid email'
         },
         isLoading: false
       }
     });
 
     expect(show).toBeCalledWith(
-      'Please make sure to use a valid Andela email',
+      'Please make sure to use a valid email',
       5000
     );
   });

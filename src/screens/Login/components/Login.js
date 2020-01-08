@@ -6,7 +6,6 @@ import {
 import styles from '../../../shared/styles/splashLogin';
 import buttonStyles from './styles';
 import GoogleButton from '../../../shared/components/Buttons/Button';
-import AndelaLogo from '../../../assets/andela.png';
 import AppLogo from '../../../assets/icon.png';
 import GoogleIcon from '../../../assets/Google__G__Logo.png';
 
@@ -38,10 +37,10 @@ const Login = ({ handleLoginPress, disabled, children }) => (
           resizeMode="contain"
         />
       </GoogleButton>
-      <View style={styles.andelaLogoContainer}>
+      <View style={styles.LogoContainer}>
         <Image
-          source={AndelaLogo}
-          style={styles.andelaLogo}
+          source={Logo}
+          style={styles.Logo}
           resizeMode="contain"
           ratio={0.5}
         />

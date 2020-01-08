@@ -41,7 +41,7 @@ export default StyleSheet.create({
     letterSpacing: 0,
     fontFamily: 'DINPro'
   },
-  andelaLogo: {
+  Logo: {
     width: scale(75),
     height: undefined,
     aspectRatio: 75 / 22

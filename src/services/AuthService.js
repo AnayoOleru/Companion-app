@@ -2,7 +2,7 @@ import * as Google from 'expo-app-auth';
 import { AsyncStorage } from 'react-native';
 import config from '../../config';
 
-const { GOOGLE_CLIENT_ID, ANDELA_AUTH_API } = config;
+const { GOOGLE_CLIENT_ID,AUTH_API } = config;
 export const googleConfig = {
   issuer: 'https://accounts.google.com',
   clientId: GOOGLE_CLIENT_ID,
@@ -23,12 +23,12 @@ export const getAccessToken = async () => {
   if (response.accessToken && response.refreshToken) {
     return { ...response, currentUser };
   }
-  throw new Error('Please make sure to use a valid Andela email');
+  throw new Error('Please make sure to use a valid email');
 };
 
 export const getJwtToken = async (accessToken) => {
   const response = await fetch(
-    `${ANDELA_AUTH_API}/token?google_token=${accessToken}`
+    `$AUTH_API}/token?google_token=${accessToken}`
   );
 
   const data = await response.json();
@@ -37,7 +37,7 @@ export const getJwtToken = async (accessToken) => {
     case 200:
       return data;
     case 401:
-      throw new Error('You can only login with your Andela email!');
+      throw new Error('You can only login with youre mail!');
     default:
       throw new Error('We weren\'t able to authenticate you, please try again');
   }

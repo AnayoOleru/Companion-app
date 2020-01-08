@@ -2,7 +2,6 @@ import { Platform } from 'react-native';
 import {
   IOS_CLIENT_ID,
   ANDROID_CLIENT_ID,
-  ANDELA_AUTH_API,
   TYPE,
   PROJECT_ID,
   PRIVATE_KEY_ID,
@@ -20,7 +19,6 @@ export default {
     ios: IOS_CLIENT_ID,
     android: ANDROID_CLIENT_ID
   }),
-  ANDELA_AUTH_API,
   TYPE,
   PROJECT_ID,
   PRIVATE_KEY_ID,

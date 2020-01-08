@@ -3,7 +3,6 @@
 function generateConfigFile(){
     echo 'IOS_CLIENT_ID='$IOS_CLIENT_ID >> .env
     echo 'ANDROID_CLIENT_ID='$ANDROID_CLIENT_ID >> .env
-    echo 'ANDELA_AUTH_API='$ANDELA_AUTH_API >> .env
     echo 'TYPE='$TYPE >> .env
     echo 'PROJECT_ID='$PROJECT_ID >> .env
     echo 'PRIVATE_KEY_ID='$PRIVATE_KEY_ID >> .env

@@ -12,4 +12,4 @@ export const user = {
 
 export const accessToken = 'some_access-token_from_GOOGLE_ACCOUNT-89787';
 export const refreshToken = 'some-refresh-token-from-9-google-account';
-export const token = 'some-token-from-andela-auth-api';
+export const token = 'some-token-from-auth-api';
