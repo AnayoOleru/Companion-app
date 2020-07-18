@@ -24,7 +24,7 @@
     "expo-font": "~5.0.1",
     "jest-config": "^24.8.0",
     "jwt-decode": "^2.2.0",
-    "lodash": "4.17.14",
+    "lodash": "4.17.19",
     "lottie-react-native": "^2.6.1",
     "moment": "2.24.0",
     "moment-timezone": "^0.5.26",
