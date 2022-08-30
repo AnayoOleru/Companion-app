@@ -27,7 +27,7 @@
     "lodash": "4.17.14",
     "lottie-react-native": "^2.6.1",
     "moment": "2.24.0",
-    "moment-timezone": "^0.5.26",
+    "moment-timezone": "^0.5.35",
     "prop-types": "15.7.2",
     "react": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
